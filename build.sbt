@@ -23,6 +23,7 @@ npmDependencies in Compile ++= Seq(
     "jsdom" -> "11.12.0",
     "bootstrap" -> "4.3.1",
     "react-bootstrap" -> "1.0.0-beta.8",
+    "react-table" -> "6.10.0"
 )
 
 skip in packageJSDependencies := false
