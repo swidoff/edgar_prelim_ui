@@ -30,3 +30,5 @@ skip in packageJSDependencies := false
 testFrameworks += new TestFramework("utest.runner.Framework")
 
 jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv()
+
+resourceDirectory in Compile := baseDirectory.value / "src" / "main" / "python"

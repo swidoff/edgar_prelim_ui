@@ -1,7 +1,5 @@
-import japgolly.scalajs.react
-import japgolly.scalajs.react.{Children, JsComponent, JsFnComponent}
+import japgolly.scalajs.react.{Children, JsFnComponent}
 
-import scala.collection.mutable
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters.JSRichGenTraversableOnce
 import scala.scalajs.js.annotation.JSImport
@@ -19,7 +17,7 @@ object Table {
 
     @js.native
     trait Props extends js.Object {
-        var data: js.Array[js.Object] = js.native
+        var data: js.Object = js.native
         var columns: js.Array[Column] = js.native
     }
 
@@ -33,6 +31,13 @@ object Table {
     def props(data: Seq[js.Object], columns: Seq[Column]): Props = {
         val p = (new js.Object).asInstanceOf[Props]
         p.data = data.toJSArray
+        p.columns = columns.toJSArray
+        p
+    }
+
+    def props(data: js.Array[js.Object], columns: Seq[Column]): Props = {
+        val p = (new js.Object).asInstanceOf[Props]
+        p.data = data
         p.columns = columns.toJSArray
         p
     }
