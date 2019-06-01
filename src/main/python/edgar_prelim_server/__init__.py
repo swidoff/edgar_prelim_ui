@@ -6,6 +6,7 @@ import pandas as pd
 from flask import Flask, make_response
 from sqlalchemy import text, create_engine
 from werkzeug.contrib.cache import SimpleCache
+from flask import request
 
 
 def create_app(test_config=None):
@@ -56,7 +57,13 @@ def create_app(test_config=None):
 
         unstacked_df = data_df.set_index(['cik', 'filing_date', 'fiscal_period', 'item']).unstack()
         unstacked_df.columns = unstacked_df.columns.droplevel(0)
-        return unstacked_df.reset_index().to_json(orient='records')
+        unstacked_df.reset_index(inplace=True)
+        fmt = request.args.get('format', 'json')
+
+        json = unstacked_df.to_json(orient='records') if fmt == 'json' else unstacked_df.to_csv()
+        resp = make_response(json, 200)
+        resp.headers['Content-Type'] = 'text/json' if fmt == 'json' else 'text/csv'
+        return resp
 
     @app.route('/companies')
     @cached(timeout=0)
