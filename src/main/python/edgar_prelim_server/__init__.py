@@ -9,8 +9,12 @@ from werkzeug.contrib.cache import SimpleCache
 from flask import request
 
 
+def db_file():
+    return (Path(__file__).parent / 'edgar_prelim.db').absolute()
+
+
 def create_app(test_config=None):
-    connection_string = os.environ.get("DB_URL", 'mysql+pymysql://root:admin@localhost/edgar_prelim')
+    connection_string = os.environ.get("DB_URL", f'sqlite:///{db_file()}')
     prelim_engine = create_engine(connection_string, echo=False)
 
     # create and configure the app
@@ -77,7 +81,7 @@ def create_app(test_config=None):
             )
             group by c.cik, c.sic, c.sic_description, c.company_name
             order by last_filing_date desc, c.cik asc
-            """, prelim_engine)
+            """, prelim_engine, parse_dates=['last_filing_date'])
         json = cik_df.assign(
             last_filing_date=cik_df.last_filing_date.map(lambda x: x.strftime('%Y-%m-%d'))
         ).to_json(orient='records')
