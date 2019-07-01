@@ -3,10 +3,11 @@ from functools import wraps
 from pathlib import Path
 
 import pandas as pd
-from flask import Flask, make_response
+from flask import Flask, make_response, url_for
 from sqlalchemy import text, create_engine
 from werkzeug.contrib.cache import SimpleCache
 from flask import request
+from werkzeug.utils import redirect
 
 
 def db_file():
@@ -52,6 +53,10 @@ def create_app(test_config=None):
             return wrapper
 
         return decorate
+
+    @app.route('/')
+    def index():
+        return redirect(url_for('static', filename='index.html'))
 
     @app.route('/<cik>')
     def cik_data(cik):
