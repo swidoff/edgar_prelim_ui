@@ -28,7 +28,7 @@ object CompanyTable {
     case class State(data: js.Array[js.Object] = Seq.empty.toJSArray)
 
     def loadCompanies(s: Lifecycle.ComponentWillMount[Props, State, Unit]) = {
-        Ajax.get("http://127.0.0.1:5000/companies").map { res =>
+        Ajax.get("/companies").map { res =>
             if (res.status == 200) {
                 val json = js.JSON.parse(res.responseText).asInstanceOf[js.Array[js.Object]]
                 s.setState(State(json))
@@ -52,7 +52,7 @@ object CompanyLink {
     val component = ScalaComponent.builder[js.Object]("CompanyLink")
         .render_P(p => Button.component(Button.props(
             variant = "link",
-            href = Some(s"http://127.0.0.01:5000/static/quality/${Table.valueOf(p)}.html")))(Table.valueOf(p)))
+            href = Some(s"/static/quality/${Table.valueOf(p)}.html")))(Table.valueOf(p)))
         .build
 
     @JSExportTopLevel("CompanyLink")
@@ -65,10 +65,10 @@ object ExportButtons {
     val component = ScalaComponent.builder[js.Object]("ExportButtons")
         .render_P(p => HtmlTagOf[html.Element]("ButtonToolbar")(
             Button.component(Button.props(
-                href = Some(s"http://127.0.0.01:5000/${Table.valueOf(p)}?format=csv")))("CSV"),
+                href = Some(s"/${Table.valueOf(p)}?format=csv")))("CSV"),
             " ",
             Button.component(Button.props(
-                href = Some(s"http://127.0.0.01:5000/${Table.valueOf(p)}?format=json")))("JSON"))
+                href = Some(s"/${Table.valueOf(p)}?format=json")))("JSON"))
         ).build
 
     @JSExportTopLevel("ExportButtons")

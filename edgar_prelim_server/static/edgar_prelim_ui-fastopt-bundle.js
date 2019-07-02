@@ -8257,7 +8257,7 @@ $c_LCompanyLink$.prototype.init___ = (function() {
     return (function(p$2) {
       var c = $m_LButton$().component$1;
       var this$9 = $as_Ljapgolly_scalajs_react_CtorType$PropsAndChildren(c.ctor$1);
-      var props = $m_LButton$().props__T__s_Option__LButton$Props("link", new $c_s_Some().init___O((("http://127.0.0.01:5000/static/quality/" + $m_LTable$().valueOf__sjs_js_Object__T(p$2)) + ".html")));
+      var props = $m_LButton$().props__T__s_Option__LButton$Props("link", new $c_s_Some().init___O((("/static/quality/" + $m_LTable$().valueOf__sjs_js_Object__T(p$2)) + ".html")));
       $m_Ljapgolly_scalajs_react_vdom_html$und$less$up$();
       var v = $m_LTable$().valueOf__sjs_js_Object__T(p$2);
       $m_Ljapgolly_scalajs_react_vdom_VdomNode$();
@@ -8371,7 +8371,7 @@ $c_LCompanyTable$.prototype.apply__Ljapgolly_scalajs_react_component_Js$Unmounte
 $c_LCompanyTable$.prototype.loadCompanies__Ljapgolly_scalajs_react_raw_React$Component__s_concurrent_Future = (function(s) {
   var this$3 = $m_Lorg_scalajs_dom_ext_Ajax$();
   var headers = $m_sci_Map$EmptyMap$();
-  var this$9 = this$3.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("GET", "http://127.0.0.1:5000/companies", null, 0, headers, false, "");
+  var this$9 = this$3.apply__T__T__Lorg_scalajs_dom_ext_Ajax$InputData__I__sci_Map__Z__T__s_concurrent_Future("GET", "/companies", null, 0, headers, false, "");
   var f = new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, s$1) {
     return (function(res$2) {
       if (($uI(res$2.status) === 200)) {
@@ -8431,7 +8431,7 @@ $c_LExportButtons$.prototype.init___ = (function() {
       var jsx$3 = $m_Ljapgolly_scalajs_react_vdom_HtmlTagOf$();
       var c = $m_LButton$().component$1;
       var this$9 = $as_Ljapgolly_scalajs_react_CtorType$PropsAndChildren(c.ctor$1);
-      var x$1 = new $c_s_Some().init___O((("http://127.0.0.01:5000/" + $m_LTable$().valueOf__sjs_js_Object__T(p$2)) + "?format=csv"));
+      var x$1 = new $c_s_Some().init___O((("/" + $m_LTable$().valueOf__sjs_js_Object__T(p$2)) + "?format=csv"));
       $m_LButton$();
       var x$2 = "primary";
       var props = $m_LButton$().props__T__s_Option__LButton$Props(x$2, x$1);
@@ -8445,7 +8445,7 @@ $c_LExportButtons$.prototype.init___ = (function() {
       var jsx$1 = new $c_Ljapgolly_scalajs_react_vdom_VdomNode$$anon$1().init___sjs_js_$bar(" ");
       var c$1 = $m_LButton$().component$1;
       var this$19 = $as_Ljapgolly_scalajs_react_CtorType$PropsAndChildren(c$1.ctor$1);
-      var x$3 = new $c_s_Some().init___O((("http://127.0.0.01:5000/" + $m_LTable$().valueOf__sjs_js_Object__T(p$2)) + "?format=json"));
+      var x$3 = new $c_s_Some().init___O((("/" + $m_LTable$().valueOf__sjs_js_Object__T(p$2)) + "?format=json"));
       $m_LButton$();
       var x$4 = "primary";
       var props$1 = $m_LButton$().props__T__s_Option__LButton$Props(x$4, x$3);
@@ -8907,21 +8907,6 @@ $c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.init___ = (function()
 $c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.assertValid__p1__sjs_js_Any__T__Lsourcecode_FullName__Lsourcecode_Line__F1__V = (function(input, name, where, line, isValid) {
   this.assertValid__p1__sjs_js_Any__T__T__T__Lsourcecode_FullName__Lsourcecode_Line__F1__V(input, name, name, (name + ".force"), where, line, isValid)
 });
-$c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.typeSymbolIs__p1__T__F1 = (function(expect) {
-  return new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, expect$1) {
-    return (function(x0$1$2) {
-      if ($uZ((x0$1$2 instanceof $g.Object))) {
-        var t = x0$1$2.$$typeof;
-        return $m_sr_BoxesRunTime$().equals__O__O__Z($g.Symbol["for"](expect$1), t)
-      } else {
-        return false
-      }
-    })
-  })(this, expect))
-});
-$c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.assertValidJsForwardRefComponent__sjs_js_Any__Lsourcecode_FullName__Lsourcecode_Line__V = (function(input, where, line) {
-  this.assertValid__p1__sjs_js_Any__T__Lsourcecode_FullName__Lsourcecode_Line__F1__V(input, "JsForwardRefComponent", where, line, this.typeSymbolIs__p1__T__F1("react.forward_ref"))
-});
 $c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.assertValid__p1__sjs_js_Any__T__T__T__Lsourcecode_FullName__Lsourcecode_Line__F1__V = (function(input, name, thisMethod, forceMethod, where, line, isValid) {
   if ((!$uZ(isValid.apply__O__O(input)))) {
     if ($is_T(input)) {
@@ -8944,6 +8929,21 @@ $c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.assertValid__p1__sjs_
     };
     throw new $c_jl_AssertionError().init___O(errMsg)
   }
+});
+$c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.typeSymbolIs__p1__T__F1 = (function(expect) {
+  return new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($this, expect$1) {
+    return (function(x0$1$2) {
+      if ($uZ((x0$1$2 instanceof $g.Object))) {
+        var t = x0$1$2.$$typeof;
+        return $m_sr_BoxesRunTime$().equals__O__O__Z($g.Symbol["for"](expect$1), t)
+      } else {
+        return false
+      }
+    })
+  })(this, expect))
+});
+$c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.assertValidJsForwardRefComponent__sjs_js_Any__Lsourcecode_FullName__Lsourcecode_Line__V = (function(input, where, line) {
+  this.assertValid__p1__sjs_js_Any__T__Lsourcecode_FullName__Lsourcecode_Line__F1__V(input, "JsForwardRefComponent", where, line, this.typeSymbolIs__p1__T__F1("react.forward_ref"))
 });
 $c_Ljapgolly_scalajs_react_component_InspectRaw$.prototype.assertValidJsFn__sjs_js_Any__Lsourcecode_FullName__Lsourcecode_Line__V = (function(input, where, line) {
   if ((!$uZ((input instanceof $g.Function)))) {
@@ -19979,6 +19979,9 @@ function $h_LCompanyTable$State$() {
   /*<skip>*/
 }
 $h_LCompanyTable$State$.prototype = $c_LCompanyTable$State$.prototype;
+$c_LCompanyTable$State$.prototype.init___ = (function() {
+  return this
+});
 $c_LCompanyTable$State$.prototype.apply$default$1__sjs_js_Array = (function() {
   var jsx$1 = $m_sjs_js_JSConverters$JSRichGenTraversableOnce$();
   $m_sc_Seq$();
@@ -19986,9 +19989,6 @@ $c_LCompanyTable$State$.prototype.apply$default$1__sjs_js_Array = (function() {
   var this$3 = new $c_scm_ListBuffer().init___();
   var col = this$3.toList__sci_List();
   return jsx$1.toJSArray$extension__sc_GenTraversableOnce__sjs_js_Array(col)
-});
-$c_LCompanyTable$State$.prototype.init___ = (function() {
-  return this
 });
 $c_LCompanyTable$State$.prototype.apply__O__O = (function(v1) {
   return new $c_LCompanyTable$State().init___sjs_js_Array(v1)
@@ -22638,9 +22638,6 @@ $c_s_util_Failure.prototype.productPrefix__T = (function() {
 $c_s_util_Failure.prototype.productArity__I = (function() {
   return 1
 });
-$c_s_util_Failure.prototype.map__F1__s_util_Try = (function(f) {
-  return this
-});
 $c_s_util_Failure.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
     return true
@@ -22652,6 +22649,9 @@ $c_s_util_Failure.prototype.equals__O__Z = (function(x$1) {
   } else {
     return false
   }
+});
+$c_s_util_Failure.prototype.map__F1__s_util_Try = (function(f) {
+  return this
 });
 $c_s_util_Failure.prototype.productElement__I__O = (function(x$1) {
   switch (x$1) {
@@ -22720,6 +22720,16 @@ $c_s_util_Success.prototype.productPrefix__T = (function() {
 $c_s_util_Success.prototype.productArity__I = (function() {
   return 1
 });
+$c_s_util_Success.prototype.equals__O__Z = (function(x$1) {
+  if ((this === x$1)) {
+    return true
+  } else if ($is_s_util_Success(x$1)) {
+    var Success$1 = $as_s_util_Success(x$1);
+    return $m_sr_BoxesRunTime$().equals__O__O__Z(this.value$2, Success$1.value$2)
+  } else {
+    return false
+  }
+});
 $c_s_util_Success.prototype.map__F1__s_util_Try = (function(f) {
   try {
     return new $c_s_util_Success().init___O(f.apply__O__O(this.value$2))
@@ -22735,16 +22745,6 @@ $c_s_util_Success.prototype.map__F1__s_util_Try = (function(f) {
     } else {
       throw e
     }
-  }
-});
-$c_s_util_Success.prototype.equals__O__Z = (function(x$1) {
-  if ((this === x$1)) {
-    return true
-  } else if ($is_s_util_Success(x$1)) {
-    var Success$1 = $as_s_util_Success(x$1);
-    return $m_sr_BoxesRunTime$().equals__O__O__Z(this.value$2, Success$1.value$2)
-  } else {
-    return false
   }
 });
 $c_s_util_Success.prototype.productElement__I__O = (function(x$1) {
@@ -24479,6 +24479,9 @@ $c_s_concurrent_impl_Promise$DefaultPromise.prototype.root__p2__s_concurrent_imp
     }
   }
 });
+$c_s_concurrent_impl_Promise$DefaultPromise.prototype.onComplete__F1__s_concurrent_ExecutionContext__V = (function(func, executor) {
+  this.dispatchOrAddCallback__p2__s_concurrent_impl_CallbackRunnable__V(new $c_s_concurrent_impl_CallbackRunnable().init___s_concurrent_ExecutionContext__F1(executor, func))
+});
 $c_s_concurrent_impl_Promise$DefaultPromise.prototype.tryCompleteAndGetListeners__p2__s_util_Try__sci_List = (function(v) {
   var _$this = this;
   _tryCompleteAndGetListeners: while (true) {
@@ -24498,9 +24501,6 @@ $c_s_concurrent_impl_Promise$DefaultPromise.prototype.tryCompleteAndGetListeners
       return null
     }
   }
-});
-$c_s_concurrent_impl_Promise$DefaultPromise.prototype.onComplete__F1__s_concurrent_ExecutionContext__V = (function(func, executor) {
-  this.dispatchOrAddCallback__p2__s_concurrent_impl_CallbackRunnable__V(new $c_s_concurrent_impl_CallbackRunnable().init___s_concurrent_ExecutionContext__F1(executor, func))
 });
 $c_s_concurrent_impl_Promise$DefaultPromise.prototype.value0__p2__s_Option = (function() {
   var _$this = this;
@@ -30445,12 +30445,12 @@ $c_sci_List.prototype.seq__sc_TraversableOnce = (function() {
 $c_sci_List.prototype.lengthCompare__I__I = (function(len) {
   return $f_sc_LinearSeqOptimized__lengthCompare__I__I(this, len)
 });
+$c_sci_List.prototype.sameElements__sc_GenIterable__Z = (function(that) {
+  return $f_sc_LinearSeqOptimized__sameElements__sc_GenIterable__Z(this, that)
+});
 $c_sci_List.prototype.apply__O__O = (function(v1) {
   var n = $uI(v1);
   return $f_sc_LinearSeqOptimized__apply__I__O(this, n)
-});
-$c_sci_List.prototype.sameElements__sc_GenIterable__Z = (function(that) {
-  return $f_sc_LinearSeqOptimized__sameElements__sc_GenIterable__Z(this, that)
 });
 $c_sci_List.prototype.thisCollection__sc_Traversable = (function() {
   return this
