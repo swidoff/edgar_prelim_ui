@@ -1,1 +1,1 @@
-web: gunicorn edgar_prelim_server:'create_app()'
+web: gunicorn src/main/python/edgar_prelim_server:'create_app()'
