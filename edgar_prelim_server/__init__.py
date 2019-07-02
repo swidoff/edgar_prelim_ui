@@ -96,12 +96,14 @@ def create_app(test_config=None):
         return resp
 
     def serve_scalajs_file(name: str, type='text/javascript'):
-        file = Path(f'target/scala-2.12/scalajs-bundler/main/{name}')
+        print("yadda!")
+        file = Path(f'edgar_prelim_server/static/{name}')
         resp = make_response(file.read_text(), 200)
         resp.headers['Content-Type'] = type
+        resp.headers['X-Content-Type-Options'] = 'nosniff'
         return resp
 
-    @app.route('/edgar_prelim_ui-fastopt-bundle.js')
+    @app.route('/static/edgar_prelim_ui-fastopt-bundle.js')
     def js():
         return serve_scalajs_file("edgar_prelim_ui-fastopt-bundle.js")
 
